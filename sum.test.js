@@ -20,8 +20,8 @@ it('should add 1 + 2 to be equal 3', () => {
 // There is multiple matchers or vergleichers
 /**
  * .toBe()
- * .toEqualt()
- *
+ * .toEquality()
+ *  https://jestjs.io/docs/expect
  */
 
 // Grouping tests together
@@ -35,5 +35,24 @@ describe('Example', () => {
 	it('object assignment', () => {
 		const obj = {};
 		expect(obj).toEqual({});
+	});
+});
+
+describe('truthy & falsy', () => {
+	it('null', () => {
+		const n = 0;
+		expect(n).toBeFalsy();
+		// You can negate the condition by adding a not
+		// its not best practice to have multiple expects because then you dont know what the reason is that it failed.
+		expect(n).not.toBeTruthy();
+
+		// what if you want to check if the value is null.
+		// expect(n).toBeNull();
+		// you can also check for undefined
+		// expect(n).toBeUndefined();
+
+		// expect(n).not.toBeUndefined();
+
+    
 	});
 });
